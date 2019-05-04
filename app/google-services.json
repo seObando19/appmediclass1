@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "686716536160",
+    "firebase_url": "https://appmediclass.firebaseio.com",
+    "project_id": "appmediclass",
+    "storage_bucket": "appmediclass.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686716536160:android:8b19f58059f5c79c",
+        "android_client_info": {
+          "package_name": "com.example.appmediclass1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686716536160-7dedrlp1l29nqfq2pscd77lprtovd797.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDce6O4VQm1X3R8D-lYjtQbt4PpZqH0wnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686716536160-7dedrlp1l29nqfq2pscd77lprtovd797.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686716536160:android:7ba1540cb0b0d589",
+        "android_client_info": {
+          "package_name": "com.example.mediclass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686716536160-7dedrlp1l29nqfq2pscd77lprtovd797.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDce6O4VQm1X3R8D-lYjtQbt4PpZqH0wnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686716536160-7dedrlp1l29nqfq2pscd77lprtovd797.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
