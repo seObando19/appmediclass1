@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="combo_especialistas">
+        <item>Seleccione opcion </item>
+        <item>Medico general</item>
+        <item>Oftalmologia</item>
+        <item>Neurologia</item>
+        <item>Cardiologia</item>
+        <item>Toxicologia</item>
+        <item>Endocrinologia</item>
+        <item>Neumologia</item>
+        <item>Traumatologia</item>
+        <item>Nutriologia</item>
+        <item>Hematologia</item>
+        <item>Pediatria</item>
+        <item>Psiquiatria</item>
+    </string-array>
+</resources>
