@@ -22,4 +22,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(MainActivity.this, Activity_ingresar.class);
         startActivity(intent);
     }
+
+    public void fragment(View view) {
+        Intent intent=new Intent(MainActivity.this,Activity_fragments.class);
+        startActivity(intent);
+    }
 }

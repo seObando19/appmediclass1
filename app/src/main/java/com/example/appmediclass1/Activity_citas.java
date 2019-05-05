@@ -3,6 +3,7 @@ package com.example.appmediclass1;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +44,17 @@ public class Activity_citas extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.combo_especialistas,android.R.layout.simple_spinner_item);
 
         especialidaad.setAdapter(adapter);
+        setupActionBar();
+
+    }
+    private void setupActionBar()
+    {
+        ActionBar actionBar=getSupportActionBar();
+        if(actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Atras");
+        }
     }
 
     public void datepicker(View view) {
@@ -63,7 +75,8 @@ public class Activity_citas extends AppCompatActivity {
     public void timepicker(View view) {
         final int hour=calendar.get(Calendar.HOUR_OF_DAY);
         final int minutes=calendar.get(Calendar.MINUTE);
-        timePickerDialog=new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+        timePickerDialog=new TimePickerDialog(
+                Activity_citas.this,R.style.Dialogtheme, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 String AM_PM;
@@ -81,12 +94,14 @@ public class Activity_citas extends AppCompatActivity {
     public void asignar_Cita(View view) {
         db = FirebaseFirestore.getInstance();
         String espc=(especialidaad.getSelectedItem().toString());
+        String f=(fech.getText().toString());
+        String h=(hora.getText().toString());
         // Add a new document with a generated id.
         Map<String, Object> data = new HashMap<>();
         data.put("correo", "ejemploPrueba1@hotmail.com");
         data.put("especialista",espc);
-        data.put("fecha",fech);
-        data.put("hora",hora);
+        data.put("fecha",f);
+        data.put("hora",h);
 
         db.collection("Citas_medicas")
                 .add(data)
@@ -95,6 +110,9 @@ public class Activity_citas extends AppCompatActivity {
                     public void onSuccess(DocumentReference documentReference) {
                         //Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                         Toast.makeText(Activity_citas.this, "Ingreso exitoso", Toast.LENGTH_SHORT).show();
+                        fech.setText("");
+                        hora.setText("");
+                        especialidaad.setSelection(0);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
