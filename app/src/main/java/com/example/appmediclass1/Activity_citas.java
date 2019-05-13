@@ -2,6 +2,7 @@ package com.example.appmediclass1;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -96,9 +97,10 @@ public class Activity_citas extends AppCompatActivity {
         String espc=(especialidaad.getSelectedItem().toString());
         String f=(fech.getText().toString());
         String h=(hora.getText().toString());
+        final String correo=getIntent().getStringExtra("correo");
         // Add a new document with a generated id.
         Map<String, Object> data = new HashMap<>();
-        data.put("correo", "ejemploPrueba1@hotmail.com");
+        data.put("correo", correo);
         data.put("especialista",espc);
         data.put("fecha",f);
         data.put("hora",h);
@@ -113,6 +115,9 @@ public class Activity_citas extends AppCompatActivity {
                         fech.setText("");
                         hora.setText("");
                         especialidaad.setSelection(0);
+                        Intent intent=new Intent(Activity_citas.this,Activitycitas_history.class);
+                        intent.putExtra("correo",correo);
+                        startActivity(intent);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

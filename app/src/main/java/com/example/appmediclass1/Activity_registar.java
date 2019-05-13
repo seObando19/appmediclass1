@@ -34,7 +34,7 @@ public class Activity_registar extends AppCompatActivity {
 
     public void acceso(View view) {
         String usuario=usuariotv.getText().toString();
-        String password=pass.getText().toString();
+        final String password=pass.getText().toString();
         if(!Patterns.EMAIL_ADDRESS.matcher(usuario).matches())
         {
             usuariotv.setError("Debe ingresar un email valido");
@@ -58,11 +58,15 @@ public class Activity_registar extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(Activity_registar.this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
                             Intent intent= new Intent(Activity_registar.this,Activity_citas.class);
+                            usuariotv.setText("");
+                            pass.setText("");
                             startActivity(intent);
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Activity_registar.this, "No se pudo registar el usuario", Toast.LENGTH_SHORT).show();
+                            usuariotv.setText("");
+                            pass.setText("");
                         }
 
                         // ...

@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_fragments" android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".Activitycitas_history" android:parentActivityName=".Activity_citas" />
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".Activity_citas" android:parentActivityName=".Activity_ingresar" />
         <activity android:name=".Activity_ingresar" android:parentActivityName=".MainActivity" />
         <activity android:name=".Activity_registar" android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

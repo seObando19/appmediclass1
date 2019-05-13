@@ -28,7 +28,7 @@ public class Activity_ingresar extends AppCompatActivity {
     }
 
     public void inisesion(View view) {
-        String usuario=correo.getText().toString();
+        final String usuario=correo.getText().toString();
         String password=clave.getText().toString();
         if(!Patterns.EMAIL_ADDRESS.matcher(usuario).matches())
         {
@@ -52,10 +52,15 @@ public class Activity_ingresar extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             //Toast.makeText(Main3Activity_ingresar.this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
                             Intent intent= new Intent(Activity_ingresar.this,Activity_citas.class);
+                            intent.putExtra("correo",usuario);
                             startActivity(intent);
+                            correo.setText("");
+                            clave.setText("");
                             finish();
                         } else {
                             Toast.makeText(Activity_ingresar.this, "No se pudo acceder al usuario", Toast.LENGTH_SHORT).show();
+                            correo.setText("");
+                            clave.setText("");
                         }
 
                         // ...
