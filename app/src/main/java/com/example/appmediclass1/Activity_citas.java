@@ -97,7 +97,8 @@ public class Activity_citas extends AppCompatActivity {
         String espc=(especialidaad.getSelectedItem().toString());
         String f=(fech.getText().toString());
         String h=(hora.getText().toString());
-        final String correo=getIntent().getStringExtra("correo");
+        String correo=getIntent().getStringExtra("correo");
+        final String c=getIntent().getStringExtra("correo");
         // Add a new document with a generated id.
         Map<String, Object> data = new HashMap<>();
         data.put("correo", correo);
@@ -116,7 +117,7 @@ public class Activity_citas extends AppCompatActivity {
                         hora.setText("");
                         especialidaad.setSelection(0);
                         Intent intent=new Intent(Activity_citas.this,Activitycitas_history.class);
-                        intent.putExtra("correo",correo);
+                        intent.putExtra("correo",c);
                         startActivity(intent);
                     }
                 })
