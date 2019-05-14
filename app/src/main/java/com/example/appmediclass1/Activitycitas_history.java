@@ -31,7 +31,7 @@ public class Activitycitas_history extends AppCompatActivity {
         listDatos = new ArrayList<String>();
         recyclercita=findViewById(R.id.recyclerId);
         recyclercita.setLayoutManager(new LinearLayoutManager(this));
-        String corr=getIntent().getStringExtra("c");
+        String corr=getIntent().getStringExtra("user");
         db = FirebaseFirestore.getInstance();
 
 
