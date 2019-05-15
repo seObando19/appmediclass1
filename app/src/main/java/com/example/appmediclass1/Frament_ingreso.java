@@ -88,7 +88,7 @@ public class Frament_ingreso extends Fragment {
         btnAcess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String usuario=correo.getText().toString();
+                String usuario=correo.getText().toString();
                 String password=clave.getText().toString();
                 if(!Patterns.EMAIL_ADDRESS.matcher(usuario).matches())
                 {
@@ -113,6 +113,7 @@ public class Frament_ingreso extends Fragment {
                                     //Toast.makeText(Main3Activity_ingresar.this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
                                     Intent intent= new Intent(getContext(),Activity_citas.class);
                                     intent.putExtra("correo",usuario);
+
                                     startActivity(intent);
                                     correo.setText("");
                                     clave.setText("");
